@@ -1,9 +1,9 @@
 # Witelli20 Student Portal
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Open Source](https://img.shields.io/badge/Open-Source-green.svg)](https://github.com/peaktwilight/witelli20)
-[![GitHub Stars](https://img.shields.io/github/stars/peaktwilight/witelli20)](https://github.com/peaktwilight/witelli20/stargazers)
-[![GitHub Releases](https://img.shields.io/github/v/release/peaktwilight/witelli20)](https://github.com/peaktwilight/witelli20/releases)
+[![Open Source](https://img.shields.io/badge/Open-Source-green.svg)](https://github.com/dreamlabs-ch/witelli20)
+[![GitHub Stars](https://img.shields.io/github/stars/dreamlabs-ch/witelli20)](https://github.com/dreamlabs-ch/witelli20/stargazers)
+[![GitHub Releases](https://img.shields.io/github/v/release/dreamlabs-ch/witelli20)](https://github.com/dreamlabs-ch/witelli20/releases)
 
 A modern, responsive web application for the Witellikerstrasse 20 student housing community in Zurich. Built with Next.js 15, React 19, Firebase, and Tailwind CSS, featuring real-time transport information, room reservations, community message boards, and weather integration.
 
@@ -63,7 +63,7 @@ A modern, responsive web application for the Witellikerstrasse 20 student housin
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/peaktwilight/witelli20.git
+   git clone https://github.com/dreamlabs-ch/witelli20.git
    cd witelli20
    ```
 
@@ -179,7 +179,7 @@ The easiest way to deploy this Next.js application:
 3. Configure environment variables in project settings
 4. Deploy - Vercel will automatically build and deploy on every push to main
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/peaktwilight/witelli20)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/dreamlabs-ch/witelli20)
 
 ### Firebase Hosting
 
@@ -249,7 +249,7 @@ git push --follow-tags
 gh release create v0.1.x --title "Release v0.1.x" --notes "Release notes"
 ```
 
-View all releases: [GitHub Releases](https://github.com/peaktwilight/witelli20/releases)
+View all releases: [GitHub Releases](https://github.com/dreamlabs-ch/witelli20/releases)
 
 ## Contributing
 
@@ -306,10 +306,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 If you encounter any issues or have questions:
-- Open an [issue on GitHub](https://github.com/peaktwilight/witelli20/issues)
+- Open an [issue on GitHub](https://github.com/dreamlabs-ch/witelli20/issues)
 - Check existing issues and discussions
 - Review the [FAQ section](https://witelli20.web.app) on the live site
 
 ---
 
-**Maintained with care by the Witelli20 community**
+Built by [Doruk](https://doruk.ch) @ [Dreamlabs.ch](https://dreamlabs.ch)
