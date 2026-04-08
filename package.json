@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "@lottiefiles/dotlottie-react": "0.18.8",
+    "@lottiefiles/dotlottie-react": "0.18.10",
     "@phosphor-icons/react": "^2.1.10",
     "axios": "1.14.0",
     "date-fns": "^4.1.0",
@@ -34,7 +34,7 @@
     "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "dotenv": "^17.3.1",
+    "dotenv": "^17.4.1",
     "eslint": "^9",
     "eslint-config-next": "15.4.10",
     "postcss": "^8",
