@@ -52,9 +52,11 @@ export default function ReservationsPage() {
   }
 
   useEffect(() => {
-    fetchReservations();
+    void Promise.resolve().then(fetchReservations);
     // Refresh active reservations every minute
-    const interval = setInterval(fetchReservations, 60000);
+    const interval = setInterval(() => {
+      void fetchReservations();
+    }, 60000);
     return () => clearInterval(interval);
   }, []);
 
