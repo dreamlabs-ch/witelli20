@@ -26,14 +26,7 @@ export default function ReservationsPage() {
   const [showForm, setShowForm] = useState(false);
   const ITEMS_PER_PAGE = 5;
 
-  useEffect(() => {
-    fetchReservations();
-    // Refresh active reservations every minute
-    const interval = setInterval(fetchReservations, 60000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const fetchReservations = async () => {
+  async function fetchReservations() {
     try {
       const q = query(collection(db, 'reservations'), orderBy('startTime', 'asc'));
       const querySnapshot = await getDocs(q);
@@ -56,7 +49,14 @@ export default function ReservationsPage() {
       setError('Failed to load reservations');
       setLoading(false);
     }
-  };
+  }
+
+  useEffect(() => {
+    fetchReservations();
+    // Refresh active reservations every minute
+    const interval = setInterval(fetchReservations, 60000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

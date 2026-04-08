@@ -6,72 +6,66 @@ interface CountdownTimerProps {
   mini?: boolean;
 }
 
-export default function CountdownTimer({ targetTime, mini = false }: CountdownTimerProps) {
-  const [timeLeft, setTimeLeft] = useState({
-   text: '',
-   parts: [''],
-   urgent: false,
-   soon: false,
- });
+function calculateTimeLeft(targetTime: string) {
+  const now = new Date();
+  const target = new Date(targetTime);
+  const diff = target.getTime() - now.getTime();
 
-  useEffect(() => {
-    const calculateTimeLeft = () => {
-      const now = new Date();
-      const target = new Date(targetTime);
-      const diff = target.getTime() - now.getTime();
+  if (diff <= 0) {
+    return {
+      text: 'Departing',
+      parts: ['Departing'],
+      urgent: true,
+      soon: false,
+    };
+  }
 
-      if (diff <= 0) {
-       return {
-         text: 'Departing',
-         parts: ['Departing'],
-         urgent: true,
-         soon: false,
-       };
-     }
+  const minutes = Math.floor(diff / 1000 / 60);
+  const urgent = minutes <= 5;
+  const soon = minutes <= 15;
 
-      const minutes = Math.floor(diff / 1000 / 60);
-      const urgent = minutes <= 5;
-      const soon = minutes <= 15;
-
-      if (minutes < 60) {
-       const seconds = Math.floor((diff / 1000) % 60);
-       if (minutes === 1) {
-         return {
-           text: `in 1m ${seconds}s`,
-           parts: ['in  ', '1', 'm  ', seconds.toString(), 's'],
-           urgent,
-           soon,
-         };
-       }
-       if (minutes === 0) {
-         return {
-           text: `in ${seconds}s`,
-           parts: ['in  ', seconds.toString(), 's'],
-           urgent,
-           soon,
-         };
-       }
-       return {
-         text: `in ${minutes}m ${seconds}s`,
-         parts: ['in  ', minutes.toString(), 'm  ', seconds.toString().padStart(2, '0'), 's'],
-         urgent,
-         soon,
-       };
-     }
-     
-     const hours = Math.floor(minutes / 60);
-     const remainingMinutes = minutes % 60;
-     return {
-       text: `in ${hours}h ${remainingMinutes}m`,
-       parts: ['in  ', hours.toString(), 'h  ', remainingMinutes.toString(), 'm'],
+  if (minutes < 60) {
+    const seconds = Math.floor((diff / 1000) % 60);
+    if (minutes === 1) {
+      return {
+        text: `in 1m ${seconds}s`,
+        parts: ['in  ', '1', 'm  ', seconds.toString(), 's'],
         urgent,
         soon,
       };
+    }
+    if (minutes === 0) {
+      return {
+        text: `in ${seconds}s`,
+        parts: ['in  ', seconds.toString(), 's'],
+        urgent,
+        soon,
+      };
+    }
+    return {
+      text: `in ${minutes}m ${seconds}s`,
+      parts: ['in  ', minutes.toString(), 'm  ', seconds.toString().padStart(2, '0'), 's'],
+      urgent,
+      soon,
     };
+  }
 
-    setTimeLeft(calculateTimeLeft());
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+  return {
+    text: `in ${hours}h ${remainingMinutes}m`,
+    parts: ['in  ', hours.toString(), 'h  ', remainingMinutes.toString(), 'm'],
+    urgent,
+    soon,
+  };
+}
+
+export default function CountdownTimer({ targetTime, mini = false }: CountdownTimerProps) {
+  const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft(targetTime));
+
+  useEffect(() => {
     const interval = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      setTimeLeft(calculateTimeLeft(targetTime));
     }, 1000);
 
     return () => clearInterval(interval);
