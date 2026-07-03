@@ -223,7 +223,7 @@ export default function ReservationsPage() {
             </motion.div>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4">Room Reservations</h1>
             <p className="text-white/80 mb-3 md:mb-4 text-sm md:text-base px-4">
-              Reserve the Foyer, Party Room, Guest Room, or Rooftop Terrace for your events. Reservations have priority over spontaneous usage.
+              Reserve the Foyer, Party Room, or Guest Room for your events. Reservations have priority over spontaneous usage.
             </p>
             <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 rounded-lg px-4 py-2 text-amber-400 text-xs md:text-sm">
               <Warning size={20} weight="fill" />

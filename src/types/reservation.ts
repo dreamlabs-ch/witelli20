@@ -13,7 +13,6 @@ export type Reservation = {
 export const ROOM_OPTIONS = {
   'foyer': 'Foyer / Projector Room',
   'party': 'Party Room',
-  'rooftop': 'Rooftop Terrace',
   'guest': 'Guest Room (next to entrance)'
 } as const;
 
