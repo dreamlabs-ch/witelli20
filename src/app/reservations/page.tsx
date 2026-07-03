@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { db } from '@/lib/firebase';
 import { collection, addDoc, query, orderBy, getDocs, Timestamp } from 'firebase/firestore';
-import { Reservation, ROOM_OPTIONS, RoomType } from '@/types/reservation';
+import { Reservation, ROOM_OPTIONS, BOOKABLE_ROOM_OPTIONS, RoomType } from '@/types/reservation';
 import { Calendar, House, Warning } from '@phosphor-icons/react';
 import Link from 'next/link';
 import ReservationCalendar from '@/components/ReservationCalendar';
@@ -305,7 +305,7 @@ export default function ReservationsPage() {
                     className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all backdrop-blur-sm"
                   >
                     <option value="" className="bg-gray-900">Select a room...</option>
-                    {Object.entries(ROOM_OPTIONS).map(([value, label]) => (
+                    {Object.entries(BOOKABLE_ROOM_OPTIONS).map(([value, label]) => (
                       <option key={value} value={value} className="bg-gray-900">{label}</option>
                     ))}
                   </select>
