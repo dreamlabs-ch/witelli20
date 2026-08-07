@@ -19,11 +19,10 @@ export const ROOM_OPTIONS = {
 
 export type RoomType = keyof typeof ROOM_OPTIONS;
 
-// Rooms that can be selected for a NEW reservation. Rooftop is intentionally
-// excluded so it's no longer bookable, while remaining in ROOM_OPTIONS so
-// existing/future rooftop reservations still display in the calendar and lists.
+// Rooms that can be selected for a NEW reservation. Rooftop and guest room are
+// intentionally excluded so they're no longer bookable, while remaining in
+// ROOM_OPTIONS so existing reservations still display in the calendar and lists.
 export const BOOKABLE_ROOM_OPTIONS: Partial<Record<RoomType, string>> = {
   'foyer': ROOM_OPTIONS.foyer,
   'party': ROOM_OPTIONS.party,
-  'guest': ROOM_OPTIONS.guest,
 };

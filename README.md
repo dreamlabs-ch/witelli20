@@ -12,7 +12,7 @@ A modern, responsive web application for the Witellikerstrasse 20 student housin
 ## Features
 
 ### Core Functionality
-- **Room Reservations** - Book common spaces (Foyer, Party Room, Guest Room) with calendar view
+- **Room Reservations** - Book common spaces (Foyer, Party Room) with calendar view
 - **Transport Information** - Real-time departures and schedules using Swiss Transport API
 - **Lost & Found** - System for tracking missing items and packages
 - **Community Board** - Anonymous confession board for student communications
