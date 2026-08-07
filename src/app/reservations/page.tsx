@@ -30,10 +30,13 @@ export default function ReservationsPage() {
     try {
       const q = query(collection(db, 'reservations'), orderBy('startTime', 'asc'));
       const querySnapshot = await getDocs(q);
-      const reservationsData = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      })) as Omit<Reservation, 'status'>[];
+      const reservationsData = querySnapshot.docs
+        .map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+        // Guest room fully retired (WOKO) — hide any leftover docs
+        .filter(res => res.roomNumber !== 'guest') as Omit<Reservation, 'status'>[];
 
       // Split into upcoming and past
       const now = new Date();

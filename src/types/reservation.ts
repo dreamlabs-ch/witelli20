@@ -14,14 +14,14 @@ export const ROOM_OPTIONS = {
   'foyer': 'Foyer / Projector Room',
   'party': 'Party Room',
   'rooftop': 'Rooftop Terrace',
-  'guest': 'Guest Room (next to entrance)'
 } as const;
 
 export type RoomType = keyof typeof ROOM_OPTIONS;
 
-// Rooms that can be selected for a NEW reservation. Rooftop and guest room are
-// intentionally excluded so they're no longer bookable, while remaining in
-// ROOM_OPTIONS so existing reservations still display in the calendar and lists.
+// Rooms that can be selected for a NEW reservation. Rooftop is intentionally
+// excluded so it's no longer bookable, while remaining in ROOM_OPTIONS so
+// existing rooftop reservations still display in the calendar and lists.
+// Guest room is fully removed (WOKO policy) — not bookable and not displayed.
 export const BOOKABLE_ROOM_OPTIONS: Partial<Record<RoomType, string>> = {
   'foyer': ROOM_OPTIONS.foyer,
   'party': ROOM_OPTIONS.party,
