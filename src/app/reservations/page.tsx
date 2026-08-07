@@ -34,9 +34,9 @@ export default function ReservationsPage() {
         .map(doc => ({
           id: doc.id,
           ...doc.data()
-        }))
+        }) as Omit<Reservation, 'status'>)
         // Guest room fully retired (WOKO) — hide any leftover docs
-        .filter(res => res.roomNumber !== 'guest') as Omit<Reservation, 'status'>[];
+        .filter(res => res.roomNumber !== 'guest');
 
       // Split into upcoming and past
       const now = new Date();
