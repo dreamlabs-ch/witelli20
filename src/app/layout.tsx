@@ -16,12 +16,12 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: 'Witellikerstrasse 20 - Modern Student Living in Zurich',
-  description: 'Experience the vibrant student life at Witellikerstrasse 20, featuring real-time transport information from Balgrist station and daily stories from our community.',
-  keywords: 'student housing, Zurich, Balgrist, Witellikerstrasse, WG, student life',
+  title: 'Witelli20 – Website closed',
+  description: 'The Witellikerstrasse 20 community website has been closed at the request of WOKO. Visit woko.ch for housing and other concerns.',
+  keywords: 'student housing, Zurich, Witellikerstrasse, WOKO',
   openGraph: {
-    title: 'Witellikerstrasse 20 - Modern Student Living in Zurich',
-    description: 'Experience the vibrant student life at Witellikerstrasse 20',
+    title: 'Witelli20 – Website closed',
+    description: 'The Witellikerstrasse 20 community website has been closed at the request of WOKO.',
     type: 'website',
     locale: 'en_US',
   },
